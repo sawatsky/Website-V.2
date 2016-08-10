@@ -20,10 +20,16 @@ a:focus,
 a:visited {
 	color: black;
 	text-decoration: none;
+	cursor: pointer;
 }
 
 * {
 	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: FancyFont;
+	src: url("fonts/DrSugiyama-Regular.ttf");
 }
 
 
@@ -36,20 +42,12 @@ page {
 	display: flex;
 	flex-direction: column;
 
-	background-image: url("images/felt.png");
+	background: linear-gradient(to right, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.25) 10%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.25) 90%,rgba(0,0,0,0.6) 100%), url("images/felt.png");
 	background-repeat: repeat;
 }
 
-page .accent {
-	position: absolute;
-
-	opacity: 0.2;
-}
-
-page .accent.name-accent {
-	top: 20px;
-	left: 5%;
-	width: 300px;
+page > * {
+	padding-left: 5%;
 }
 
 
@@ -58,15 +56,76 @@ page .accent.name-accent {
 									Navbar
 ****************************************************************************/
 navbar {
-	height: 100px;
-	margin-top: 20px;
+	position: relative;
+	height: 150px;
+	width: 100%;
+	margin-top: 25px;
+	padding: 15px 50px 15px 0;
+
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 9%,rgba(255,255,255,0.1) 10%,rgba(0,0,0,0.1) 11%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.1) 89%,rgba(255,255,255,0.1) 90%,rgba(0,0,0,0.1) 91%,rgba(0,0,0,0) 100%);
+}
+
+navbar::before {
+	content: "";
+	width: 600px;
+	height: 150px;
+	position: absolute;
+	top: 0;
+	left: 4%;
+
+	background: url("images/swirls1.png");
+	background-repeat: no-repeat;
+	background-size: 600px 150px;
+	opacity: 0.1;
 }
 
 navbar navbar-brand {
-	margin-left: 5%;
+	display: inline-block;
+	margin: 6px 0 6px 5%;
 
-	font-size: 32px;
+	font-family: FancyFont;
+	font-size: 72px;
 	color: white;
+}
+
+navbar navbar-links {
+	float: right;
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+}
+
+navbar navbar-links > a {
+	position: relative;
+
+	letter-spacing: 1px;
+	color: white;
+}
+
+navbar navbar-links > a:hover,
+navbar navbar-links > a:active,
+navbar navbar-links > a:focus,
+navbar navbar-links > a:visited {
+	color: white;
+}
+
+navbar navbar-links > a.selected {
+	cursor: default;
+}
+
+navbar navbar-links > a.selected::before,
+navbar navbar-links > a:not(.selected):hover::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	background: url("images/swirls13.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	opacity: 0.2;
 }
 
 
@@ -75,7 +134,11 @@ navbar navbar-brand {
 									Blurb
 ****************************************************************************/
 blurb {
-	height: 100px;
+	height: 150px;
+	margin: 0 auto;
+
+	color: white;
+	font-size: 72px;
 }
 
 

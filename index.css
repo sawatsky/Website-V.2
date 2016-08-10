@@ -46,10 +46,6 @@ page {
 	background-repeat: repeat;
 }
 
-page > * {
-	padding-left: 5%;
-}
-
 
 
 /****************************************************************************
@@ -57,7 +53,7 @@ page > * {
 ****************************************************************************/
 navbar {
 	position: relative;
-	height: 150px;
+	min-height: 150px;
 	width: 100%;
 	margin-top: 25px;
 	padding: 15px 50px 15px 0;
@@ -68,7 +64,7 @@ navbar {
 navbar::before {
 	content: "";
 	width: 600px;
-	height: 150px;
+	min-height: 150px;
 	position: absolute;
 	top: 0;
 	left: 4%;
@@ -92,7 +88,7 @@ navbar navbar-links {
 	float: right;
 	display: flex;
 	flex-direction: column;
-	text-align: right;
+	align-items: flex-end;
 }
 
 navbar navbar-links > a {
@@ -116,16 +112,16 @@ navbar navbar-links > a.selected {
 navbar navbar-links > a.selected::before,
 navbar navbar-links > a:not(.selected):hover::before {
 	content: "";
-	width: 100%;
+	width: 175%;
 	height: 100%;
 	position: absolute;
 	top: 0;
-	left: 0;
+	left: -40%;
 
-	background: url("images/swirls13.png");
+	background: url("images/line2.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	opacity: 0.2;
+	opacity: 0.4;
 }
 
 
@@ -134,7 +130,7 @@ navbar navbar-links > a:not(.selected):hover::before {
 									Blurb
 ****************************************************************************/
 blurb {
-	height: 150px;
+	min-height: 112px;
 	margin: 0 auto;
 
 	color: white;
@@ -148,4 +144,18 @@ blurb {
 ****************************************************************************/
 body-content {
 	flex: 1;
+	position: relative;
+	max-width: 1500px;
+	padding: 0 5%;
+
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 15px,rgba(255,255,255,0.1) 16px,rgba(0,0,0,0.1) 17px,rgba(0,0,0,0) 50%);
+}
+
+body-content content-title {
+	display: block;
+	margin-top: 15px;
+	padding: 6px 0;
+
+	font-size: 24px;
+	color: white;
 }

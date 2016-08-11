@@ -10,4 +10,5 @@
 
 <b>v0.0.1 - 2016 Aug 9-10</b>
 	- Made adjustments based on screensize
+	- Basic template of Contact Me page
 </pre>

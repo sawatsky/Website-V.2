@@ -4,75 +4,30 @@
 	<head>
 		<meta charset="UTF-8"/>
 		
-		<meta name="author" content="Heather Sawatsky"/>
-		<meta name="description" content="Heather Sawatsky's Portfolio"/>
+		<meta name="author" content="Heather Sawatsky" />
+		<meta name="description" content="Heather Sawatsky's Portfolio" />
 		
 		<title>Heather Sawatsky's Portfolio</title>
 		
-		<link rel="stylesheet" href="index.css"/>
-		<link rel="stylesheet" href="contact-me.css"/>
+		<link rel="stylesheet" href="/css/default.css" />
+		<link rel="import" href="/elements/site-navbar/site-navbar.html" />
+		<link rel="import" href="/elements/site-blurb/site-blurb.html" />
+		<link rel="import" href="/elements/site-content/site-content.html" />
 	</head>
 
 	<body>
 		<page>
-			<!-- Home Page -->
-			<navbar>
-				<navbar-brand>Heather Sawatsky</navbar-brand>
+			<site-navbar>Heather Sawatsky</site-navbar>
 
-				<navbar-links>
-					<a class="selected">Home</a>
-					<a>About Me</a>
-					<a>Portfolio</a>
-					<a>Blog</a>
-					<a>Contact Me</a>
-				</navbar-links>
-			</navbar>
+			<site-blurb>Design - Engineer - Develop</site-blurb>
 
-			<blurb>Design - Engineer - Develop</blurb>
-
-			<body-content>
+			<site-content>
 				<content-title>Featured Work</content-title>
 
 				<featured></featured>
-			</body-content>
-
-			<!-- Contact Me -->
-			<!-- <navbar>
-				<navbar-brand>Contact Heather</navbar-brand>
-
-				<navbar-links>
-					<a>Home</a>
-					<a>About Me</a>
-					<a>Portfolio</a>
-					<a>Blog</a>
-					<a class="selected">Contact Me</a>
-				</navbar-links>
-			</navbar>
-
-			<blurb>Contact - Connect - Communicate</blurb>
-
-			<body-content>
-				<content-title>I'd Love to Hear from You!</content-title>
-
-				<contact-form>
-					<form-element>
-						<input-title>Name<span class="required">*</span></input-title>
-						<div contenteditable input></div>
-					</form-element>
-
-					<form-element>
-						<input-title>Email<span class="required">*</span></input-title>
-						<div contenteditable input></div>
-					</form-element>
-
-					<form-element>
-						<input-title>I'm all ears!<span class="required">*</span></input-title>
-						<div contenteditable textarea></div>
-					</form-element>
-				</contact-form>
-			</body-content> -->
+			</site-content>
 		</page>
 
-		<script src="contact-me.js"></script>
+		
 	</body>
 </html>

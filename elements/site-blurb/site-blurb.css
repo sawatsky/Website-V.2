@@ -1,0 +1,11 @@
+:host {
+	margin: 0 auto;
+
+	font-size: 56px;
+}
+
+@media (max-width: 768px) {
+	:host {
+		font-size: 7vw;
+	}
+}

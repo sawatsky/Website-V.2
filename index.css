@@ -9,9 +9,14 @@ body {
 	min-height: 320px;
 	overflow-x: hidden;
 	
+	color: white;
 	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 	line-height: 1.5;
 	font-size: 16px;
+}
+
+* {
+	box-sizing: border-box;
 }
 
 a,
@@ -19,13 +24,20 @@ a:hover,
 a:active,
 a:focus,
 a:visited {
-	color: black;
+	color: white;
 	text-decoration: none;
 	cursor: pointer;
 }
 
-* {
-	box-sizing: border-box;
+input, textarea {
+	line-height: 1.5;
+	font-size: 16px;
+
+	color: white;
+}
+
+.required {
+	color: red;
 }
 
 @font-face {
@@ -82,7 +94,6 @@ navbar navbar-brand {
 
 	font-family: FancyFont;
 	font-size: 72px;
-	color: white;
 }
 
 navbar navbar-links {
@@ -96,14 +107,6 @@ navbar navbar-links > a {
 	position: relative;
 
 	letter-spacing: 1px;
-	color: white;
-}
-
-navbar navbar-links > a:hover,
-navbar navbar-links > a:active,
-navbar navbar-links > a:focus,
-navbar navbar-links > a:visited {
-	color: white;
 }
 
 navbar navbar-links > a.selected {
@@ -152,7 +155,6 @@ navbar navbar-links > a:not(.selected):hover::before {
 blurb {
 	margin: 0 auto;
 
-	color: white;
 	font-size: 56px;
 }
 
@@ -181,5 +183,4 @@ body-content content-title {
 	padding: 6px 0;
 
 	font-size: 24px;
-	color: white;
 }

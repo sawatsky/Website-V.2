@@ -10,11 +10,13 @@
 		<title>Heather Sawatsky's Portfolio</title>
 		
 		<link rel="stylesheet" href="index.css"/>
+		<link rel="stylesheet" href="contact-me.css"/>
 	</head>
 
 	<body>
 		<page>
-			<navbar>
+			<!-- Home Page -->
+			<!-- <navbar>
 				<navbar-brand>Heather Sawatsky</navbar-brand>
 
 				<navbar-links>
@@ -32,7 +34,45 @@
 				<content-title>Featured Work</content-title>
 
 				<featured></featured>
+			</body-content> -->
+
+			<!-- Contact Me -->
+			<navbar>
+				<navbar-brand>Contact Heather</navbar-brand>
+
+				<navbar-links>
+					<a>Home</a>
+					<a>About Me</a>
+					<a>Portfolio</a>
+					<a>Blog</a>
+					<a class="selected">Contact Me</a>
+				</navbar-links>
+			</navbar>
+
+			<blurb>Contact - Connect - Communicate</blurb>
+
+			<body-content>
+				<content-title>I'd Love to Hear from You!</content-title>
+
+				<contact-form>
+					<form-element>
+						<input-title>Name<span class="required">*</span></input-title>
+						<div contenteditable input></div>
+					</form-element>
+
+					<form-element>
+						<input-title>Email<span class="required">*</span></input-title>
+						<div contenteditable input></div>
+					</form-element>
+
+					<form-element>
+						<input-title>I'm all ears!<span class="required">*</span></input-title>
+						<div contenteditable textarea></div>
+					</form-element>
+				</contact-form>
 			</body-content>
 		</page>
+
+		<script src="contact-me.js"></script>
 	</body>
 </html>

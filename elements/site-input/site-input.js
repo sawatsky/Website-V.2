@@ -4,35 +4,28 @@
 	// Function called when element successfully created
 	function createdCallback(hostElement) {
 		var input = hostElement.shadowRoot.querySelector("div[contenteditable]");
-		var title = hostElement.shadowRoot.querySelector("site-input-title");
+		var placeholder = hostElement.shadowRoot.querySelector("site-input-placeholder");
 		var error = hostElement.shadowRoot.querySelector(".error");
 		var _old = "";
 		var _timeout;
-
-		// Do something better...
-		if (hostElement.hasAttribute("multi-line")) {
-			input.setAttribute("multi-line", "");
-		} else {
-			input.setAttribute("single-line", "");
-		}
 
 		// The div's content has changed
 		input.oninput = function() {
 			if (!this.textContent) {
 				// The content is empty (user erased everything)
 
-				title.classList.remove("expanded");
+				placeholder.classList.remove("expanded");
 				_old = this.textContent;
 			} else {
 				// There's content
 				if (!_old) {
 					// But the content used to be empty, so move the placeholder
 
-					title.classList.add("expanded");
+					placeholder.classList.add("expanded");
 				}
 
 				// Check if content to long
-				if (checkInput(this)) {
+				if (checkInputLength(hostElement, this)) {
 					// Content is under acceptable length
 
 					_old = this.textContent;
@@ -45,7 +38,7 @@
 					} else {
 						// User attempted to paste in content that was too long
 
-						title.classList.remove("expanded");
+						placeholder.classList.remove("expanded");
 					}
 
 					//Toggle show/hide of error message for content being too long
@@ -87,12 +80,8 @@
 	}
 
 	// Check that input content is within acceptable range
-	function checkInput(input) {
-		if (input.hasAttribute("single-line")) {
-			return input.textContent.length <= 256;
-		} else {
-			return input.textContent.length <= 1024;
-		}
+	function checkInputLength(hostElement, input) {
+		return hostElement.hasAttribute("multi-line") ? input.textContent.length <= 1024 : input.textContent.length <= 256;
 	}
 
 	// Move the cursor to the end of the content

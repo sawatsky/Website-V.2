@@ -1,5 +1,6 @@
 :host {
-	margin: 0 auto;
+	display: block;
+	text-align: center;
 
 	font-size: 56px;
 }

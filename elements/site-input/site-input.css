@@ -1,10 +1,18 @@
+/****************************************************************************
+									Host
+****************************************************************************/
 :host {
 	display: block;
 	margin-top: 2rem;
 	position: relative;
 }
 
-:host site-input-title {
+
+
+/****************************************************************************
+								 Placeholder
+****************************************************************************/
+:host site-input-placeholder {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -14,7 +22,7 @@
 	transition: top 0.2s, font-size 0.2s;
 }
 
-:host site-input-title.expanded {
+:host site-input-placeholder.expanded {
 	font-size: 12px;
 	top: -1rem;
 }
@@ -27,9 +35,10 @@
 :host div[contenteditable] {
 	display: inline-block;
 	min-width: 20%;
-	max-width: 50%;
+	max-width: 100%;
 	padding: 0;
 	overflow: hidden;
+	white-space: nowrap;
 
 	background-color: transparent;
 	border-top: none;
@@ -39,21 +48,24 @@
 	transition: min-width 0.2s;
 }
 
-:host div[contenteditable]:focus {
-	outline: none;
-	min-width: 50%;
+:host([multi-line]) div[contenteditable] {
+	white-space: normal;
 }
 
-:host div[single-line] {
-	white-space: nowrap;
+:host div[contenteditable]:focus {
+	outline: none;
+	min-width: 100%;
 }
 
 
 
 /****************************************************************************
-									General
+									Error
 ****************************************************************************/
 :host .error {
+	position: absolute;
+	bottom: -15px;
+	right: 0;
 	opacity: 0;
 
 	color: black;

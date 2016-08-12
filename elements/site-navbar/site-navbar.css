@@ -1,6 +1,7 @@
 @import "/css/scaffolding.css";
 
 :host {
+	display: block;
 	position: relative;
 	min-height: 150px;
 	width: 100%;

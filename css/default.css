@@ -34,9 +34,9 @@ body {
 									Page
 ****************************************************************************/
 page {
+	display: block;
 	height: 100%;
-	display: flex;
-	flex-direction: column;
+	overflow: auto;
 
 	background: linear-gradient(to right, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.25) 10%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.25) 90%,rgba(0,0,0,0.6) 100%), url("/images/felt.png");
 	background-repeat: repeat;
@@ -49,8 +49,18 @@ page {
 ****************************************************************************/
 site-content content-title {
 	display: block;
-	margin-top: 15px;
 	padding: 6px 0;
 
 	font-size: 24px;
+}
+
+
+
+/****************************************************************************
+								Contact Me
+****************************************************************************/
+left-column, right-column {
+	display: block;
+	float: left;
+	width: 50%;
 }

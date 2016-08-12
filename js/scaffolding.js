@@ -1,12 +1,13 @@
 (function(window, document, undefined) {
 	var _MyWebsite = {
-		"autoRegister": function(importee, name) {
+		"autoRegister": function(name, createdCallback) {
+			var importee = document.currentScript.ownerDocument;
 			return new Promise(function(success) {
 				var prototype = Object.create(HTMLElement.prototype);
 
 				prototype.createdCallback = function() {
 					this.createShadowRoot().appendChild(document.importNode(importee.querySelector("#"+name).content, true));
-					success(this);
+					if (createdCallback) { createdCallback(this); }
 				}
 
 				document.registerElement(name, { prototype: prototype });

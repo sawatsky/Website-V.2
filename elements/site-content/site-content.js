@@ -1,3 +1,3 @@
 (function(window, document, undefined) {
-	window._MyWebsite.autoRegister(document.currentScript.ownerDocument, "site-content");
+	window._MyWebsite.autoRegister("site-content");
 })(window, document);

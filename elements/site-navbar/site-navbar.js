@@ -1,3 +1,3 @@
 (function(window, document, undefined) {
-	window._MyWebsite.autoRegister(document.currentScript.ownerDocument, "site-navbar");
+	window._MyWebsite.autoRegister("site-navbar");
 })(window, document);

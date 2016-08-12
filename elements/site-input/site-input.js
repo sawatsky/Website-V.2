@@ -1,6 +1,8 @@
 (function(window, document, undefined) {
-	// Only the first one is getting registered!
-	window._MyWebsite.autoRegister(document.currentScript.ownerDocument, "site-input").then(function(hostElement) {
+	window._MyWebsite.autoRegister("site-input", createdCallback);
+
+	// Function called when element successfully created
+	function createdCallback(hostElement) {
 		var input = hostElement.shadowRoot.querySelector("div[contenteditable]");
 		var title = hostElement.shadowRoot.querySelector("site-input-title");
 		var error = hostElement.shadowRoot.querySelector(".error");
@@ -82,7 +84,7 @@
 
 			this.scrollLeft = 0;
 		}
-	});
+	}
 
 	// Check that input content is within acceptable range
 	function checkInput(input) {

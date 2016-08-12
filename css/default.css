@@ -28,6 +28,14 @@ body {
 	color: red;
 }
 
+site-navbar, site-blurb {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
 
 
 /****************************************************************************
@@ -60,7 +68,8 @@ site-content content-title {
 								Contact Me
 ****************************************************************************/
 left-column, right-column {
-	display: block;
-	float: left;
+	display: inline-block;
 	width: 50%;
+	vertical-align: top;
+	text-align: center;
 }

@@ -14,22 +14,36 @@
 		<link rel="import" href="/elements/site-navbar/site-navbar.html" />
 		<link rel="import" href="/elements/site-blurb/site-blurb.html" />
 		<link rel="import" href="/elements/site-content/site-content.html" />
+		<link rel="import" href="/elements/web-reference/web-reference.html" />
 		<link rel="import" href="/elements/site-input/site-input.html" />
 	</head>
 
 	<body>
 		<page>
-			<site-navbar>Contact Heather</site-navbar>
+			<site-navbar contact-me>Contact Heather</site-navbar>
 
 			<site-blurb>Contact - Connect - Grow</site-blurb>
 
 			<site-content>
 				<left-column>
-					<content-title>I can be found around the web</content-title>
-				</left-column>
+					<content-title>Around the Web</content-title>
 
-				<right-column>
-					<content-title>Or send me a message!</content-title>
+					<web-reference>
+						<img src="/images/linkedin-icon.png" />
+						<span>LinkedIn</span>
+					</web-reference>
+
+					<web-reference>
+						<img src="/images/github-icon2.png" />
+						<span>Github</span>
+					</web-reference>
+
+					<web-reference>
+						<img src="/images/pinterest-icon2.png" />
+						<span>Pinterest</span>
+					</web-reference>
+				</left-column><right-column>
+					<content-title>Send a Message</content-title>
 
 					<contact-form>
 						<site-input>Name<span class="required">*</span></site-input>

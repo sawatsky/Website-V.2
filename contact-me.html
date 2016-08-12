@@ -14,6 +14,7 @@
 		<link rel="import" href="/elements/site-navbar/site-navbar.html" />
 		<link rel="import" href="/elements/site-blurb/site-blurb.html" />
 		<link rel="import" href="/elements/site-content/site-content.html" />
+		<link rel="import" href="/elements/site-input/site-input.html" />
 	</head>
 
 	<body>
@@ -26,20 +27,11 @@
 				<content-title>I'd Love to Hear from You!</content-title>
 
 				<contact-form>
-					<form-element>
-						<input-title>Name<span class="required">*</span></input-title>
-						<div contenteditable input></div>
-					</form-element>
+					<site-input single-line>Name<span class="required">*</span></site-input>
 
-					<form-element>
-						<input-title>Email<span class="required">*</span></input-title>
-						<div contenteditable input></div>
-					</form-element>
+					<site-input single-line>Email<span class="required">*</span></site-input>
 
-					<form-element>
-						<input-title>I'm all ears!<span class="required">*</span></input-title>
-						<div contenteditable textarea></div>
-					</form-element>
+					<site-input multi-line>I'm all ears!<span class="required">*</span></site-input>
 				</contact-form>
 			</site-content>
 		</page>

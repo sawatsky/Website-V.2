@@ -5,13 +5,22 @@
 				var prototype = Object.create(HTMLElement.prototype);
 
 				prototype.createdCallback = function() {
-					var root = this.createShadowRoot();
-					root.appendChild(document.importNode(importee.querySelector("#"+name).content, true));
-					success(root);
+					this.createShadowRoot().appendChild(document.importNode(importee.querySelector("#"+name).content, true));
+					success(this);
 				}
 
 				document.registerElement(name, { prototype: prototype });
 			});
+		},
+
+		"toggleClass": function(cls, parent, node) {
+			Array.prototype.forEach.call(parent.children, function(node) {
+				node.classList.remove(cls);
+			});
+
+			if (node) {
+				node.classList.add(cls);
+			}
 		}
 	}
 

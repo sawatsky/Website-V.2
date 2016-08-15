@@ -120,6 +120,7 @@
 @media (max-width: 768px) {
 	:host {
 		margin: 0;
+		padding: 15px 5%;
 
 		text-align: center;
 	}

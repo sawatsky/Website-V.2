@@ -3,6 +3,37 @@
 	text-align: center;
 
 	font-size: 56px;
+	cursor: default;
+}
+
+:host > span {
+	margin: 20px;
+	position: relative;
+}
+
+:host ::content[select="site-blurb-link"] site-blurb-link {
+	display: inline;
+	padding: 18px 15px 20px 15px;
+	position: relative;
+	z-index: 1;
+
+	font-style: italic;
+	letter-spacing: 1px;
+}
+
+:host ::content[select="site-blurb-link"] site-blurb-link:not(.selected) {
+	cursor: pointer;
+}
+
+:host ::content[select="site-blurb-link"] site-blurb-link.selected {
+	cursor: default;
+	pointer-events: none;
+}
+
+:host ::content[select="site-blurb-link"] site-blurb-link:not(:first-child)::before {
+	content: ".";
+	position: absolute;
+	left: -4px;
 }
 
 @media (max-width: 768px) {

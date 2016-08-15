@@ -1,7 +1,12 @@
 <template id="site-blurb">
 	<style> @import "/elements/site-blurb/site-blurb.css"; </style>
 
-	<content></content>
+	<span>
+		<span>
+			<content select="site-blurb-link"></content>
+		</span>
+		<content select="site-blurb-link-indicator"></content>
+	</span>
 </template>
 
 <script src="/elements/site-blurb/site-blurb.js"></script>

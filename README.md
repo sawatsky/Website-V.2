@@ -21,5 +21,8 @@
 	- Fixed site-input element - now working
 	- Fixed indicators of current page
 	- Removed display flex in favour of older methods
-	- Created web-references element
+	- Created web-references element for Contact Me page
+
+<b>v0.4.1 - 2016 Aug 15</b>
+	- Started About Me page, with sub-navbar
 </pre>

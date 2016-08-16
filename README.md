@@ -23,7 +23,11 @@
 	- Removed display flex in favour of older methods
 	- Created web-references element for Contact Me page
 
-<b>v0.4.1 - 2016 Aug 15</b>
+<b>v0.2.1 - 2016 Aug 15</b>
 	- Started About Me page, with sub-navbar
 	- Separting site-blurb and site-subnavbar
+
+
+<b>v0.2.2 - 2016 Aug 16</b>
+	- Functionality of site-subnavbar
 </pre>

@@ -67,47 +67,6 @@ site-content {
 }
 
 
-
-/****************************************************************************
-								About Me
-****************************************************************************/
-site-blurb {
-	font-size: 20px;
-}
-
-site-blurb .i-am {
-	position: absolute;
-	top: -17px;
-
-	font-size: 12px;
-	transition: left 0.25s;
-}
-
-site-blurb site-blurb-link[location].selected {
-	border-top: 1px rgba(255, 255, 255, 0.4) solid;
-}
-
-site-blurb site-blurb-link[location]:nth-child(1).selected ~ .i-am,
-site-blurb site-blurb-link[location]:nth-child(1):not(.selected):hover ~ .i-am {
-	left: 0px;
-}
-
-site-blurb site-blurb-link[location]:nth-child(2).selected ~ .i-am,
-site-blurb site-blurb-link[location]:nth-child(2):not(.selected):hover ~ .i-am {
-	left: 125px;
-}
-
-site-blurb site-blurb-link[location]:nth-child(3).selected ~ .i-am,
-site-blurb site-blurb-link[location]:nth-child(3):not(.selected):hover ~ .i-am 
-{	left: 265px;
-}
-
-site-blurb site-blurb-link[location]:nth-child(4).selected ~ .i-am,
-site-blurb site-blurb-link[location]:nth-child(4):not(.selected):hover ~ .i-am {
-	left: 385px;
-}
-
-
 /****************************************************************************
 								Contact Me
 ****************************************************************************/

@@ -1,0 +1,58 @@
+:host {
+	display: block;
+	text-align: center;
+
+	font-size: 28px;
+	cursor: default;
+}
+
+:host > span {
+	position: relative;
+}
+
+
+/***********************************************************************
+								Links
+***********************************************************************/
+:host ::content site-subnavbar-link {
+	display: inline;
+	padding: 18px 15px 20px 15px;
+	position: relative;
+	z-index: 1;
+
+	font-style: italic;
+	letter-spacing: 1px;
+}
+
+:host ::content site-subnavbar-link:not(.selected) {
+	cursor: pointer;
+}
+
+:host ::content site-subnavbar-link.selected {
+	cursor: default;
+	pointer-events: none;
+
+	border-top: 1px rgba(255, 255, 255, 0.4) solid;
+}
+
+:host ::content site-subnavbar-link:not(:first-child)::before {
+	content: ".";
+	position: absolute;
+	left: -4px;
+}
+
+
+/***********************************************************************
+								Indicator
+***********************************************************************/
+:host ::content site-subnavbar-link-indicator
+
+
+/***********************************************************************
+							Screen Adjustments
+***********************************************************************/
+@media (max-width: 768px) {
+	:host {
+		font-size: 7vw;
+	}
+}

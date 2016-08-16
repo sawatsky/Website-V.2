@@ -25,4 +25,5 @@
 
 <b>v0.4.1 - 2016 Aug 15</b>
 	- Started About Me page, with sub-navbar
+	- Separting site-blurb and site-subnavbar
 </pre>

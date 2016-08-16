@@ -4,11 +4,10 @@ site-subnavbar > span {
 
 site-subnavbar .i-am {
 	position: absolute;
-	top: -17px;
 
 	font-size: 12px;
 	transition: left 0.25s;
-}
+}/*
 
 site-subnavbar site-subnavbar-link[location]:nth-child(1).selected ~ .i-am,
 site-subnavbar site-subnavbar-link[location]:nth-child(1):not(.selected):hover ~ .i-am {
@@ -28,4 +27,4 @@ site-subnavbar site-subnavbar-link[location]:nth-child(3):not(.selected):hover ~
 site-subnavbar site-subnavbar-link[location]:nth-child(4).selected ~ .i-am,
 site-subnavbar site-subnavbar-link[location]:nth-child(4):not(.selected):hover ~ .i-am {
 	left: 385px;
-}
+}*/

@@ -1,0 +1,27 @@
+/****************************************************************************
+									Host
+****************************************************************************/
+:host .element {
+	display: inline-block;
+	position: relative;
+	z-index: 2;
+
+	cursor: pointer;
+}
+
+:host .blurb {
+	display: inline-block;
+	vertical-align: top;
+	padding-top: 25px;
+}
+
+:host([right]) ::content img {
+	float: right;
+}
+
+:host ::content img {
+	width: 75px;
+	height: 75px;
+	margin: 0 5px;
+	float: left;
+}

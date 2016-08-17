@@ -1,0 +1,19 @@
+<template id="site-navbar">
+	<style>
+		@import "/css/scaffolding.css";
+		@import "/elements/site-navbar/site-navbar.css";
+	</style>
+
+	<navbar-brand><content></content></navbar-brand>
+
+	<navbar-links>
+		<a onclick="window.location.pathname = '/'" home>Home</a>
+		<a onclick="window.location.pathname = '/about-me.html'" about-me>About Me</a>
+		<a onclick="window.location.pathname = '/portfolio.html'" portfolio>Portfolio</a>
+		<a onclick="window.location.pathname = '/blog.html'" blog>Blog</a>
+		<a onclick="window.location.pathname = '/contact-me.html'" contact-me>Contact Me</a>
+	</navbar-links>
+</template>
+
+<script src="/js/scaffolding.js"></script>
+<script src="/elements/site-navbar/site-navbar.js"></script>

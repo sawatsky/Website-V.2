@@ -1,0 +1,20 @@
+<!------------------------------------------------------------------------------
+	Available attributes: multi-line
+	Defaault attributes: single-line
+
+	multi-line: allows the input to wrap to multiple lines
+-------------------------------------------------------------------------------->
+
+<template id="site-input">
+	<style>
+		@import "/css/scaffolding.css";
+		@import "/elements/site-input/site-input.css";
+	</style>
+
+	<site-input-placeholder><content></content></site-input-placeholder>
+	<div contenteditable></div>
+	<span class="error">Too long...</span>
+</template>
+
+<script src="/js/scaffolding.js"></script>
+<script src="/elements/site-input/site-input.js"></script>

@@ -1,0 +1,136 @@
+/************************************************************************
+								Host
+************************************************************************/
+:host {
+	display: block;
+	position: relative;
+	min-height: 150px;
+	width: 100%;
+	margin-top: 25px;
+	padding: 15px 50px 15px 5%;
+
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 9%,rgba(255,255,255,0.1) 10%,rgba(0,0,0,0.1) 11%,rgba(0,0,0,0) 50%,rgba(0,0,0,0.1) 89%,rgba(255,255,255,0.1) 90%,rgba(0,0,0,0.1) 91%,rgba(0,0,0,0) 100%);
+}
+
+:host::before {
+	content: "";
+	width: 600px;
+	min-height: 150px;
+	position: absolute;
+	top: 0;
+	left: 4%;
+
+	background: url("/images/swirls1.png");
+	background-repeat: no-repeat;
+	background-size: 600px 150px;
+	opacity: 0.1;
+}
+
+
+
+/************************************************************************
+								Navbar Brand
+************************************************************************/
+:host navbar-brand {
+	display: inline-block;
+	margin: 6px 0;
+
+	font-family: FancyFont;
+	font-size: 72px;
+}
+
+
+
+/************************************************************************
+								Navbar links
+************************************************************************/
+:host navbar-links {
+	float: right;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+:host navbar-links > a {
+	position: relative;
+
+	letter-spacing: 1px;
+}
+
+:host([home]) navbar-links > a[home],
+:host([about-me]) navbar-links > a[about-me],
+:host([portfolio]) navbar-links > a[portfolio],
+:host([blog]) navbar-links > a[blog],
+:host([contact-me]) navbar-links > a[contact-me] {
+	cursor: default;
+	pointer-events: none;
+}
+
+:host([home]) navbar-links > a[home]::before,
+:host([about-me]) navbar-links > a[about-me]::before,
+:host([portfolio]) navbar-links > a[portfolio]::before,
+:host([blog]) navbar-links > a[blog]::before,
+:host([contact-me]) navbar-links > a[contact-me]::before {
+	content: "";
+	width: 175%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: -40%;
+
+	background: url("/images/line3.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	opacity: 0.4;
+}
+
+:host([home]) navbar-links > a:not([home])::before,
+:host([about-me]) navbar-links > a:not([about-me])::before,
+:host([portfolio]) navbar-links > a:not([portfolio])::before,
+:host([blog]) navbar-links > a:not([blog])::before,
+:host([contact-me]) navbar-links > a:not([contact-me])::before {
+	content: "";
+	width: 175%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: -40%;
+
+	background: url("/images/line2.png");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	opacity: 0;
+}
+
+:host([home]) navbar-links > a:not([home]):hover::before,
+:host([about-me]) navbar-links > a:not([about-me]):hover::before,
+:host([portfolio]) navbar-links > a:not([portfolio]):hover::before,
+:host([blog]) navbar-links > a:not([blog]):hover::before,
+:host([contact-me]) navbar-links > a:not([contact-me]):hover::before {
+	opacity: 0.4;
+}
+
+
+
+/************************************************************************
+							Screen Adjustments
+************************************************************************/
+@media (max-width: 768px) {
+	:host {
+		margin: 0;
+		padding: 15px 5%;
+
+		text-align: center;
+	}
+
+	:host navbar-brand {
+		margin: 0;
+	}
+
+	:host navbar-links {
+		float: none;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-around;
+	}
+}

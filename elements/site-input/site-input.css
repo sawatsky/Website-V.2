@@ -1,0 +1,79 @@
+/****************************************************************************
+									Host
+****************************************************************************/
+:host {
+	display: block;
+	margin-top: 2rem;
+	position: relative;
+}
+
+
+
+/****************************************************************************
+								 Placeholder
+****************************************************************************/
+:host site-input-placeholder {
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+
+	opacity: 0.5;
+	transition: top 0.2s, font-size 0.2s;
+}
+
+:host site-input-placeholder.expanded {
+	font-size: 12px;
+	top: -1rem;
+}
+
+
+
+/****************************************************************************
+									Inputs
+****************************************************************************/
+:host div[contenteditable] {
+	display: inline-block;
+	min-width: 20%;
+	max-width: 100%;
+	padding: 0;
+	overflow: hidden;
+	white-space: nowrap;
+
+	background-color: transparent;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom: 1px white solid;
+	transition: min-width 0.2s;
+}
+
+:host([multi-line]) div[contenteditable] {
+	white-space: normal;
+}
+
+:host div[contenteditable]:focus {
+	outline: none;
+	min-width: 100%;
+}
+
+
+
+/****************************************************************************
+									Error
+****************************************************************************/
+:host .error {
+	position: absolute;
+	bottom: -15px;
+	right: 0;
+	opacity: 0;
+
+	color: black;
+	font-size: 12px;
+	transition: opacity 0.5s;
+	vertical-align: middle;
+}
+
+:host .error.show {
+	opacity: 1;
+}

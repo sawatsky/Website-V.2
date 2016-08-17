@@ -1,0 +1,74 @@
+/****************************************************************************
+									Host
+****************************************************************************/
+:host {
+	display: block;
+	text-align: center;
+
+	font-size: 28px;
+	cursor: default;
+}
+
+:host > site-subnavbar-links {
+	display: inline-block !important;
+	position: relative !important;
+}
+
+
+
+/***********************************************************************
+								Links
+***********************************************************************/
+:host ::content site-subnavbar-link {
+	display: inline-block;
+	padding: 15px;
+	margin: -15px 0;
+	position: relative;
+	z-index: 1;
+
+	font-style: italic;
+	letter-spacing: 1px;
+}
+
+:host ::content site-subnavbar-link:not(.selected) {
+	cursor: pointer;
+}
+
+:host ::content site-subnavbar-link.selected {
+	cursor: default;
+
+	font-weight: bold;
+}
+
+:host ::content site-subnavbar-link:not(:first-child)::before {
+	content: ".";
+	position: absolute;
+	left: -4px;
+
+	font-weight: normal;
+	text-shadow: none;
+}
+
+
+
+/***********************************************************************
+								Indicator
+***********************************************************************/
+:host ::content site-subnavbar-link-indicator {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transition: left 0.25s;
+}
+
+
+
+/***********************************************************************
+							Screen Adjustments
+***********************************************************************/
+@media (max-width: 768px) {
+	:host {
+		font-size: 7vw;
+	}
+}

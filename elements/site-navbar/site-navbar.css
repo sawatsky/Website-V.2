@@ -64,50 +64,25 @@
 :host([contact-me]) navbar-links > a[contact-me] {
 	cursor: default;
 	pointer-events: none;
+
+	font-weight: bold;
+	text-shadow: 0px 2px pink;
 }
 
-:host([home]) navbar-links > a[home]::before,
-:host([about-me]) navbar-links > a[about-me]::before,
-:host([portfolio]) navbar-links > a[portfolio]::before,
-:host([blog]) navbar-links > a[blog]::before,
-:host([contact-me]) navbar-links > a[contact-me]::before {
-	content: "";
-	width: 175%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: -40%;
-
-	background: url("../../images/line3.png");
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	opacity: 0.4;
+:host([home]) navbar-links > a:not([home]),
+:host([about-me]) navbar-links > a:not([about-me]),
+:host([portfolio]) navbar-links > a:not([portfolio]),
+:host([blog]) navbar-links > a:not([blog]),
+:host([contact-me]) navbar-links > a:not([contact-me]) {
+	cursor: pointer;
 }
 
-:host([home]) navbar-links > a:not([home])::before,
-:host([about-me]) navbar-links > a:not([about-me])::before,
-:host([portfolio]) navbar-links > a:not([portfolio])::before,
-:host([blog]) navbar-links > a:not([blog])::before,
-:host([contact-me]) navbar-links > a:not([contact-me])::before {
-	content: "";
-	width: 175%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: -40%;
-
-	background: url("../../images/line2.png");
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	opacity: 0;
-}
-
-:host([home]) navbar-links > a:not([home]):hover::before,
-:host([about-me]) navbar-links > a:not([about-me]):hover::before,
-:host([portfolio]) navbar-links > a:not([portfolio]):hover::before,
-:host([blog]) navbar-links > a:not([blog]):hover::before,
-:host([contact-me]) navbar-links > a:not([contact-me]):hover::before {
-	opacity: 0.4;
+:host([home]) navbar-links > a:not([home]):hover,
+:host([about-me]) navbar-links > a:not([about-me]):hover,
+:host([portfolio]) navbar-links > a:not([portfolio]):hover,
+:host([blog]) navbar-links > a:not([blog]):hover,
+:host([contact-me]) navbar-links > a:not([contact-me]):hover {
+	font-weight: bold;
 }
 
 

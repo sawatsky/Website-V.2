@@ -6,11 +6,15 @@
 -------------------------------------------------------------------------------->
 
 <template id="site-input">
-	<style> @import "/elements/site-input/site-input.css"; </style>
+	<style>
+		@import "/css/scaffolding.css";
+		@import "/elements/site-input/site-input.css";
+	</style>
 
 	<site-input-placeholder><content></content></site-input-placeholder>
 	<div contenteditable></div>
 	<span class="error">Too long...</span>
 </template>
 
+<script src="/js/scaffolding.js"></script>
 <script src="/elements/site-input/site-input.js"></script>

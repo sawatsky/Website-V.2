@@ -28,7 +28,7 @@ body {
 	color: red;
 }
 
-site-navbar, site-blurb {
+site-navbar, site-subnavbar, site-blurb {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;

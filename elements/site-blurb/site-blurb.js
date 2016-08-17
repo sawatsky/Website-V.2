@@ -1,3 +1,3 @@
-(function(window, document, undefined) {
+(function(window, undefined) {
 	window._MyWebsite.autoRegister("site-blurb");
-})(window, document);
+})(window);

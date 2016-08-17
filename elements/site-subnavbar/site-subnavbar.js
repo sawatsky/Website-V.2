@@ -1,53 +1,96 @@
 (function(window, undefined) {
-	window._MyWebsite.autoRegister("site-subnavbar", createdCallback);
+	var _MyWebsite = window._MyWebsite;
+	_MyWebsite.autoRegister("site-subnavbar", createdCallback);
 
+	/**********************************************************************
+		Callback called when new element of this type has been created
+	**********************************************************************/
 	function createdCallback(hostElement) {
 		var links = hostElement.querySelectorAll("site-subnavbar-link");
 		var indicator = hostElement.querySelector("site-subnavbar-link-indicator");
 
-		var selected = hostElement.querySelector("site-subnavbar-link.selected");
-		var _timeout = window.setInterval(function() {
-			if (selected.offsetParent) {
-				window.clearInterval(_timeout);
-				moveIndicator(indicator, selected);
+		if (links.length > 0 && indicator) {
+			// Must provide at least one link and one indicator
 
-				selected.offsetParent.onmouseleave = function() {
-					moveIndicatorHorizontal(indicator, selected);
+			var selectedLink;
+			for (var i = 0; i < links.length; i++) {
+				if (links[i].classList.contains("selected")) {
+					selectedLink = links[i];
+				}
+
+				// Move indicator when link is hovered over
+				links[i].onmouseover = function() {
+					_positionIndicatorHorizontal(indicator, this);
+				}
+
+				// Toggle selected link on click
+				links[i].onclick = function() {
+					if (!this.classList.contains("selected")) {
+						_MyWebsite.toggleClass("selected", hostElement, this);
+						selectedLink = this;
+					}
 				}
 			}
-		}, 100);
 
-		for (var i = 0; i < links.length; i++) {
-			links[i].onmouseover = function() {
-				moveIndicatorHorizontal(indicator, this);
+			if (!selectedLink) {
+				// If user has not chosen a selected link, default to first link
+				selectedLink = links[0];
 			}
-		}
-	}
 
-	function moveIndicator(indicator, link) {
-		moveIndicatorVertical(indicator, link);
-		moveIndicatorHorizontal(indicator, link);
-	}
+			// Give element enough time to define it's properties
+			var _timeout = window.setInterval(function() {
+				if (selectedLink.offsetParent) {
+					window.clearInterval(_timeout);
 
-	function moveIndicatorVertical(indicator, link) {
-		console.log(link.offsetHeight, indicator.offsetHeight, (link.offsetHeight - indicator.offsetHeight)/2 + link.offsetTop, "asd", link.offsetTop, indicator.offsetTop);
-		if (indicator.hasAttribute("top")) {
-			indicator.style.top = 0 - indicator.offsetHeight + "px";
-		} else if (indicator.hasAttribute("middle")) {
-			
-			indicator.style.top = link.offsetHeight/2 - indicator.offsetHeight/2 + link.offsetTop  + "px";
+					// Set starting position of indicator
+					_positionIndicator(indicator, selectedLink);
+
+					// Reset indicator position when site-subnavbar is no longer being hovered over
+					selectedLink.offsetParent.onmouseleave = function() {
+						_positionIndicatorHorizontal(indicator, selectedLink);
+					}
+				}
+			}, 50);
 		} else {
-			indicator.style.top = link.offsetHeight + "px";
+			throw new Exception("Must pass at least 1 'site-subnavbar-link' and a 'site-subnavbar-link-indicator' into the 'site-subnavbar'.");
 		}
 	}
 
-	function moveIndicatorHorizontal(indicator, link) {
+
+
+	/**********************************************************************
+		Positions the indicator both vertically and horizontally
+	**********************************************************************/
+	function _positionIndicator(indicator, link) {
+		_positionIndicatorVertical(indicator, link);
+		_positionIndicatorHorizontal(indicator, link);
+	}
+
+
+	/**********************************************************************
+		Positions the indicator vertically
+	**********************************************************************/
+	function _positionIndicatorVertical(indicator, link) {
+		if (indicator.hasAttribute("top")) {
+			indicator.style.top = link.offsetTop + "px";
+		} else if (indicator.hasAttribute("middle")) {
+			indicator.style.top = (link.offsetHeight - indicator.offsetHeight)/2 + link.offsetTop  + "px";
+		} else {
+			indicator.style.top = link.offsetHeight - indicator.offsetHeight + link.offsetTop - 1 + "px"; // -1 for fractional height of link.offsetParent
+		}
+	}
+
+
+	/**********************************************************************
+		Positions the indicator horizontally
+	**********************************************************************/
+	function _positionIndicatorHorizontal(indicator, link) {
 		if (indicator.hasAttribute("left")) {
 			indicator.style.left = link.offsetLeft + "px";
 		} else if (indicator.hasAttribute("center")) {
-			indicator.style.left = link.offsetLeft + (link.offsetWidth - indicator.offsetWidth)/2 + "px";
+			indicator.style.left = (link.offsetWidth - indicator.offsetWidth)/2 + link.offsetLeft + "px";
 		} else {
-			indicator.style.left = link.offsetLeft + (link.offsetWidth - indicator.offsetWidth) + "px";
+			indicator.style.left = link.offsetWidth - indicator.offsetWidth + link.offsetLeft - 1 + "px"; // -1 for fractional width of link.offsetParent
 		}
 	}
 })(window);

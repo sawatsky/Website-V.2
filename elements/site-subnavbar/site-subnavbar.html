@@ -1,10 +1,24 @@
-<template id="site-subnavbar">
-	<style> @import "/elements/site-subnavbar/site-subnavbar.css"; </style>
+<!-------------------------------------------------------------------------
+	Must give at least one site-subnavbar-link
+	Must give an indicator and only one indicator
 
-	<span>
+	Can provide optional attributes on the indicator to say where the
+	indicator should be placed relative to links
+	Options: left, center, right = indicates horizontal position
+	Options: top, middle, bottom = indicates vertical position
+-------------------------------------------------------------------------->
+
+<template id="site-subnavbar">
+	<style>
+		@import "/css/scaffolding.css";
+		@import "/elements/site-subnavbar/site-subnavbar.css";
+	</style>
+
+	<site-subnavbar-links>
 		<content select="site-subnavbar-link"></content>
 		<content select="site-subnavbar-link-indicator"></content>
-	</span>
+	</site-subnavbar-links>
 </template>
 
+<script src="/js/scaffolding.js"></script>
 <script src="/elements/site-subnavbar/site-subnavbar.js"></script>

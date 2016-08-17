@@ -1,30 +1,18 @@
-site-subnavbar > span {
-	margin: 20px;
+/****************************************************************************
+									Links
+****************************************************************************/
+site-subnavbar site-subnavbar-link.selected {
+	text-shadow: 0px 2px pink;
 }
 
-site-subnavbar .i-am {
-	position: absolute;
+
+
+/****************************************************************************
+								   Indicator
+****************************************************************************/
+site-subnavbar site-subnavbar-link-indicator {
+	padding-top: 5px;
+	padding-left: 15px;
 
 	font-size: 12px;
-	transition: left 0.25s;
-}/*
-
-site-subnavbar site-subnavbar-link[location]:nth-child(1).selected ~ .i-am,
-site-subnavbar site-subnavbar-link[location]:nth-child(1):not(.selected):hover ~ .i-am {
-	left: 0px;
 }
-
-site-subnavbar site-subnavbar-link[location]:nth-child(2).selected ~ .i-am,
-site-subnavbar site-subnavbar-link[location]:nth-child(2):not(.selected):hover ~ .i-am {
-	left: 125px;
-}
-
-site-subnavbar site-subnavbar-link[location]:nth-child(3).selected ~ .i-am,
-site-subnavbar site-subnavbar-link[location]:nth-child(3):not(.selected):hover ~ .i-am 
-{	left: 265px;
-}
-
-site-subnavbar site-subnavbar-link[location]:nth-child(4).selected ~ .i-am,
-site-subnavbar site-subnavbar-link[location]:nth-child(4):not(.selected):hover ~ .i-am {
-	left: 385px;
-}*/

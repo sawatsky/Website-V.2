@@ -20,7 +20,7 @@
 	top: 0;
 	left: 4%;
 
-	background: url("/images/swirls1.png");
+	background: url("../../images/swirls1.png");
 	background-repeat: no-repeat;
 	background-size: 600px 150px;
 	opacity: 0.1;
@@ -78,7 +78,7 @@
 	top: 0;
 	left: -40%;
 
-	background: url("/images/line3.png");
+	background: url("../../images/line3.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	opacity: 0.4;
@@ -96,7 +96,7 @@
 	top: 0;
 	left: -40%;
 
-	background: url("/images/line2.png");
+	background: url("../../images/line2.png");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	opacity: 0;

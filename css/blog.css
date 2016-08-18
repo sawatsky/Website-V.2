@@ -1,0 +1,11 @@
+site-subnavbar-link[custom-link] {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+
+	font-size: 18px;
+}
+
+site-subnavbar-link[custom-link]::before {
+	content: "" !important;
+}

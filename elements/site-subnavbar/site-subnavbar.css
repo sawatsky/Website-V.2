@@ -38,6 +38,7 @@
 	cursor: default;
 
 	font-weight: bold;
+	text-shadow: 0px 2px pink;
 }
 
 :host ::content site-subnavbar-link:not(:first-child)::before {

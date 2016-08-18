@@ -10,8 +10,9 @@
 		<title>HS - Blog</title>
 		
 		<link rel="stylesheet" href="css/default.css" />
+		<link rel="stylesheet" href="css/blog.css" />
 		<link rel="import" href="elements/site-navbar/site-navbar.html" />
-		<link rel="import" href="elements/site-blurb/site-blurb.html" />
+		<link rel="import" href="elements/site-subnavbar/site-subnavbar.html" />
 		<link rel="import" href="elements/site-content/site-content.html" />
 	</head>
 
@@ -19,13 +20,21 @@
 		<page>
 			<site-navbar blog>Heather Sawatsky</site-navbar>
 
-			<site-blurb>?</site-blurb>
+			<site-subnavbar>
+				<site-subnavbar-link location="jquery">JQuery</site-subnavbar-link><!--
+					--><site-subnavbar-link location="bootstrap">Bootstrap</site-subnavbar-link><!--
+					--><site-subnavbar-link location="polymer">Polymer</site-subnavbar-link><!--
+					--><site-subnavbar-link location="angular">AngularJS</site-subnavbar-link><!--
+					--><site-subnavbar-link class="selected" location="random" custom-link>"I need some inspiration."</site-subnavbar-link>
+					<site-subnavbar-link-indicator middle left></site-subnavbar-link-indicator>
+			</site-subnavbar>
 
 			<site-content>
-				<content-title>?</content-title>
+				<content-title>Here's a random selection from my content!</content-title>
 			</site-content>
 		</page>
 
 		<script src="js/default.js"></script>
+		<script src="js/blog.js"></script>
 	</body>
 </html>

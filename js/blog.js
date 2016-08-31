@@ -14,7 +14,8 @@
 					// Otherwise, display list of all blogs from response text
 				}
 			}
-			xmlHttpRequest.open("GET", "blogs/" + (link.hasAttribute("src") ? link.getAttribute("src") : links[Math.floor(Math.random() * links.length)]).getAttribute("src"), true);
+			
+			xmlHttpRequest.open("GET", "blogs/" + (link.hasAttribute("src") ? link.getAttribute("src") : links[Math.floor(Math.random() * links.length)].getAttribute("src")), true);
 			xmlHttpRequest.send();
 		}
 	});

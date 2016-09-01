@@ -78,6 +78,14 @@ left-column, right-column {
 	vertical-align: top;
 }
 
+@media (max-width: 768px) {
+	left-column, right-column {
+		display: block;
+		width: 100%;
+		height: initial;
+	}
+}
+
 web-reference {
 	display: block;
 }
